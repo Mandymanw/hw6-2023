@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Video Controls</title>
+	<link rel="stylesheet" type="text/css" href="css/video.css">
+	<script defer src="js/video.js"></script>
+</head>
+<body> 
+
+	<!-- 2. Page load: Initialize the video element and turn off autoplay and turn off looping.-->
+<main>
+	<h1>JavaScript Video Controls</h1>
+	<div class = "options">
+		<button  id = "play">Play Video</button>  <!-- 3. Play Button: click on this button the video starts to play -->
+		<button  id = "pause">Pause Video</button><!-- 4. Pause Button: click on this button the video pauses -->
+		<button  id = "slower">Slow Down</button><!-- 5. Slow Down Button: Slow the current video speed by 10% each time the button is clicked and log the new speed to the console.   -->
+		<button  id = "faster">Speed Up</button> <!-- 6. Speed Up Button: Increase the current video speed each time the button is clicked and log the new speed to the console.  Change it by an amount proportional to the slow down. CHECK THIS!!  If you slow down three times and then speed up three times you should be within 5 digits of 100% again. -->
+		<button  id = "skip">Skip Ahead</button>  <!-- 7. Skip Ahead Button: Advance the current video by 10 seconds.  If the video length has been exceeded go back to the start of the video - no farther.   Log the current location of the video.
+
+		-->
+	</div>
+
+	<figure>
+
+		<video class = "video" 
+			autoplay="false" 
+			width="640" 
+			height="360" 
+			id="player1" 
+			preload="none"
+			src="assets/marchingband.mov">
+			  
+		    <track src="captions_en.vtt" kind="captions" srclang="en" label="english_captions">	
+		  		Your browser does not support HTML5 video.
+		</video>
+		<figcaption>[The Michigan Marching Band]</figcaption>
+		</figure> 
+	<button id="mute">Mute</button><br> <!-- 8. Mute Button: Mute/unmute the video and update the text in the button -->
+
+	<label for="slider">Volume</label>: 0 <input type="range" id="slider" min="0" max="100" value="100" step="10"> 100%<br>
+	<div>Volume is: <span id = "volume"> </span><br><br></div> <!-- 9. Volume slider: Change the volume based on the slider and update the volume information.-->
+
+	<button id = "vintage">Old School</button> <!-- 10. Old Button: Utilize the existing oldSchool class on the video element -->
+	<button id = "orig">Original</button> <!-- 11. Original Button: Remove the oldSchool class from the video. -->
+
+	<p>Video courtesy of Allison Sweet.</p>
+
+</main>
+</body> 
+</html>
