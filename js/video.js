@@ -50,29 +50,16 @@ document.addEventListener("DOMContentLoaded", function () {
 	  muteButton.textContent = video.muted ? "Unmute" : "Mute";
 	});
   
-	// 9. Volume slider: Change the volume based on the slider and update the volume information
-	// const volumeSlider = document.getElementById("slider");
-	// const volumeDisplay = document.getElementById("volume");
+	/// 9. Volume slider: Change the volume based on the slider and update the volume information
 	const volumeSlider = document.getElementById("slider");
   	const volumeDisplay = document.getElementById("volume");
-  	volumeDisplay.textContent = `${volumeSlider.value}%`;
 
-  	// Set initial volume
-  	video.volume = volumeSlider.value / 100;
-	volumeSlider.addEventListener("input", function () {
-		video.volume = volumeSlider.value / 100;
-		updateVolumeDisplay();
-	  });
+  	volumeSlider.addEventListener("input", function () {
+    	video.volume = volumeSlider.value / 100;
+    	volumeDisplay.textContent = `${volumeSlider.value}%`;
+  	});
 
-	  
-  
-	//volumeSlider.addEventListener("input", function () {
-	  //video.volume = volumeSlider.value / 100;
-	  //volumeDisplay.textContent = `${volumeSlider.value}%`;});
-
-
-
-
+  	
 	// 10. Old Button: Utilize the existing oldSchool class on the video element
 	document.getElementById("vintage").addEventListener("click", function () {
 	  video.classList.add("oldSchool");
